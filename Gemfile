@@ -27,4 +27,4 @@ group :development do
   gem 'annotate'
 end
 
-gem 'bcrypt'
+gem 'bcrypt-ruby'
