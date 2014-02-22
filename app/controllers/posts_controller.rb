@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_param)
+    @post = current_user.posts.build(post_param)
     if @post.save
-      redirect_to root_path, notice: 'Post created'
+      redirect_to posts_path, notice: 'Post created'
     else
       flash[:error] = 'Could not create post'
       render :index
