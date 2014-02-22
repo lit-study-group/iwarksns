@@ -24,6 +24,7 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'annotate'
 end
 
 gem 'bcrypt'
