@@ -10,4 +10,8 @@
 #
 
 class Post < ActiveRecord::Base
+
+  def self.for_user(user)
+    Post.limit(20)
+  end
 end
