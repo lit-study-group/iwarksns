@@ -1,8 +1,10 @@
 ja:
   btn:
     delete: 削除
+    post: 投稿
   time:
     before: '%{time}前'
   posts:
     delete_confirmation: 本当に削除しますか?
+    feed: タイムライン
 
