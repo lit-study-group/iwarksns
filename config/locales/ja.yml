@@ -11,6 +11,9 @@ ja:
     delete_confirmation: 本当に削除しますか?
     feed: タイムライン
     placeholder: 書き込んでみよう
+    list: 投稿一覧
+  user:
+    friends_list: 友達一覧
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
 

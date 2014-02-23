@@ -1,4 +1,19 @@
 <h1><%= @user.name %></h1>
-<div class="posts">
-  <%= render @posts %>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <%= link_to t('posts.list'), '#posts', 'data-toggle' => 'tab' %>
+  </li>
+  <li>
+    <%= link_to t('user.friends_list'), '#friends', 'data-toggle' => 'tab' %>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active posts" id="posts">
+    <%= render @posts %>
+  </div>
+  <div class="tab-pane" id="friends">
+    Friends
+  </div>
 </div>
