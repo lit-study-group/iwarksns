@@ -9,9 +9,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'jquery-rails'
 
-group :doc do
-  gem 'sdoc', require: false
-end
+gem 'bcrypt-ruby'
 
 group :development, :test do
   gem 'sqlite3'
@@ -27,4 +25,3 @@ group :development do
   gem 'annotate'
 end
 
-gem 'bcrypt-ruby'

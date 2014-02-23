@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:destroy]
-  before_action :check_user, only: [:destroy]
+  before_action :check_user!, only: [:destroy]
 
   def index
     @post = Post.new
@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_param)
+    @post = current_user.posts.build(post_param)
     if @post.save
-      redirect_to root_path, notice: 'Post created'
+      redirect_to posts_path, notice: 'Post created'
     else
       flash[:error] = 'Could not create post'
       render :index
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    head :no_content
+    redirect_to posts_path
   end
 
   private
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def check_user
+  def check_user!
     if current_user.id != @post.user_id
       redirect_to root_path
     end

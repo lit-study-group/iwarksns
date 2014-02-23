@@ -1,3 +1,22 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$border-color: #dddddd;
+
+.posts {
+  margin-top: 20px;
+  .post-container {
+    padding: 20px 0;
+    border-top: 1px $border-color solid;
+
+    &:last-child {
+      border-bottom: 1px $border-color solid;
+    }
+    .post {
+      width: 90%;
+      margin: auto;
+
+      .date {
+        font-size: 9pt;
+        color: #aaaaaa;
+      }
+    }
+  }
+}
