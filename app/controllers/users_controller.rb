@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :check_logined, only:[:create]
   before_action :set_user, only: [:show]
 
   def show
