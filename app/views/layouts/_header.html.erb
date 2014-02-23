@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= render 'layouts/mobile_toggle' %>
-      <a class="navbar-brand" href="#"><%= t 'general.title' %></a>
+      <%= link_to t('general.title'), root_path, class: 'navbar-brand' %>
     </div>
 
     <div class="collapse navbar-collapse">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
+          <li><%= link_to t('btn.logout'), sessions_path, method: :delete %></li>
         </ul>
       <% else %>
         <%= render 'sessions/form', user: user %>

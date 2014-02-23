@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
 
   delegate :name, to: :author, prefix: true
 
+  default_scope { order(created_at: :desc) }
+
   def self.for_user(user)
     Post.limit(20)
   end

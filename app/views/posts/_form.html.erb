@@ -1,4 +1,10 @@
-<%= form_for post, html: { class: 'form' } do |f| %>
-  <%= f.text_area :body %>
-  <%= f.submit t('btn.post'), class: 'btn btn-primary' %>
+<%= form_for post, html: { class: 'form post-form' } do |f| %>
+  <div class="form-group row">
+    <div class="col-lg-11">
+      <%= f.text_area :body, class: 'form-control', placeholder: t('posts.placeholder') %>
+    </div>
+    <div class="col-lg-1">
+      <%= f.submit t('btn.post'), class: 'btn btn-primary' %>
+    </div>
+  </div>
 <% end %>

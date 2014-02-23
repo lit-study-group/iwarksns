@@ -2,6 +2,7 @@ ja:
   btn:
     delete: 削除
     post: 投稿
+    logout: ログアウト
   general:
     title: Iwark SNS
   time:
@@ -9,6 +10,7 @@ ja:
   posts:
     delete_confirmation: 本当に削除しますか?
     feed: タイムライン
+    placeholder: 書き込んでみよう
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
 
