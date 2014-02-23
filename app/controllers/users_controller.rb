@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :check_logined, only:[:create]
+  skip_before_action :authenticate_user!, only:[:create]
   before_action :set_user, only: [:show]
 
   def show
@@ -7,9 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.save
-    redirect_to root_url
+    @new_user = User.new(user_params)
+    if @new_user.save
+      redirect_to @new_user
+    else
+      render 'welcome/index'
+    end
   end
 
   private

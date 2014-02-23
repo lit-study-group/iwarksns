@@ -1,9 +1,10 @@
 class WelcomeController < ApplicationController
-  skip_before_action :check_logined
+  skip_before_action :authenticate_user!
   before_action :check_welcome_logined, only:[:index]
 
   def index
     @user = User.new
+    @new_user = User.new
   end
 
   private

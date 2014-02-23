@@ -7,4 +7,6 @@ ja:
   posts:
     delete_confirmation: 本当に削除しますか?
     feed: タイムライン
+  errors:
+    login: メールアドレスもしくはアドレスが正しくありません
 
