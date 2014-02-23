@@ -1,5 +1,5 @@
 <h1><%= @user.name %></h1>
-
+<%= link_to 'ログアウト', session_path(current_user.id), :confirm => 'ログアウトしますか？', :method => :delete %>
 <div class="posts">
   <%= render @posts %>
 </div>
