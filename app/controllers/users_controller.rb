@@ -7,9 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.save
-    redirect_to root_url
+    @new_user = User.new(user_params)
+    if @new_user.save
+      redirect_to @new_user
+    else
+      render 'welcome/index'
+    end
   end
 
   private

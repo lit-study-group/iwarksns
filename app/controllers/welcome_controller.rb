@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
 
   def index
     @user = User.new
+    @new_user = User.new
   end
 
   private

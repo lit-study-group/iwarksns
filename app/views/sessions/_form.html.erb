@@ -1,0 +1,13 @@
+<%= form_for user, url: sessions_path, html:{role:'form'} do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div>
+    <%= submit_tag "ログイン", class: "btn btn-primary" %>
+  </div>
+<% end %>
