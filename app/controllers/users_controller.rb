@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @new_user = User.new(user_params)
     if @new_user.save
+      login(@new_user)
       redirect_to @new_user
     else
       render 'welcome/index'

@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
     @user = User.new unless user_signed_in?
   end
 
+  def login(user)
+    session[:user_id] = user.id
+  end
+
 end
