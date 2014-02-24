@@ -5,10 +5,10 @@ ja:
     logout: ログアウト
   general:
     title: Iwark SNS
+    delete_confirmation: 本当に削除しますか?
   time:
     before: '%{time}前'
   posts:
-    delete_confirmation: 本当に削除しますか?
     feed: タイムライン
     placeholder: 書き込んでみよう
     list: 投稿一覧
@@ -16,9 +16,11 @@ ja:
     friends_list: 友達一覧
     add_friend: 友達追加
     remove_friend: 友達から外す
+    profile: プロフィール
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
   comments:
     saved: コメントは保存されました
     not_saved: コメントは保存されませんでした
+    placeholder: コメントを書く
 

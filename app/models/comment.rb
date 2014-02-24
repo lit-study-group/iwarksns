@@ -13,4 +13,9 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
+
+  default_scope { order(created_at: :desc)
+                 .includes(:user) }
+
+  delegate :name, to: :user, prefix: true
 end

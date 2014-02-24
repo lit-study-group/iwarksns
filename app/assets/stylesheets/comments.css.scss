@@ -1,3 +1,31 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  border-top: 1px solid #ababab;
+  textarea {
+    resize: vertical;
+  }
+
+  .comments {
+    .comment-container {
+      border: 1px solid #ababab;
+      width: 60%;
+      margin: 10px auto 0 auto;
+      &:hover {
+        .delete {
+          visibility: visible;
+        }
+      }
+      .delete {
+        visibility: hidden;
+      }
+      .comment {
+        margin: 30px 0 10px 5%;
+      }
+    }
+  }
+  .form {
+    margin-top: 10px;
+  }
+}

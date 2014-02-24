@@ -24,13 +24,13 @@ $border-color: #dddddd;
         color: #aaaaaa;
       }
 
-      .delete {
-        display: none;
+      .post-action > .delete {
+        visibility: hidden;
       }
     }
     &:hover {
-      .delete {
-        display: block;
+      .post-action > .delete {
+        visibility: visible;
       }
     }
   }

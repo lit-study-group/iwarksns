@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_post
-  before_action :set_comment
-  before_action :check_user!
+  before_action :set_comment, only: [:destroy]
+  before_action :check_user!, only: [:destroy]
 
   def create
     @comment = current_user.comments.create(comment_params.merge({ post_id: @post.id }))

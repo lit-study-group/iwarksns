@@ -14,10 +14,10 @@
       </div>
 
       <% if user_signed_in? && current_user.owns_post?(post) %>
-        <div class="col-lg-1 col-md-1">
+        <div class="col-lg-1 col-md-1 post-action">
           <div class="delete">
             <%= link_to t('btn.delete'), post, method: 'delete',
-              confirm: t('posts.delete_confirmation') %>
+              confirm: t('general.delete_confirmation'), class: 'btn btn-danger' %>
           </div>
         </div>
       <% end %>
@@ -28,4 +28,5 @@
       </span>
     </div>
   </div>
+  <%= render 'comments/list', post: post, comments: post.comments, comment: comment %>
 </div>
