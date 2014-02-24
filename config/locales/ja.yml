@@ -18,4 +18,7 @@ ja:
     remove_friend: 友達から外す
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
+  comments:
+    saved: コメントは保存されました
+    not_saved: コメントは保存されませんでした
 
