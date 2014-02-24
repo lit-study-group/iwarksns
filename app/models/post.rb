@@ -14,7 +14,10 @@ class Post < ActiveRecord::Base
 
   delegate :name, to: :author, prefix: true
 
-  default_scope { order(created_at: :desc) }
+  default_scope { order(created_at: :desc)
+                 .includes(:comments) }
+
+  has_many :comments
 
   def self.for_user(user)
     Post.limit(20)

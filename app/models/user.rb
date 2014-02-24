@@ -19,9 +19,14 @@ class User < ActiveRecord::Base
                                     association_foreign_key: 'friend_id'
 
   has_many :posts
+  has_many :comments
 
-  def owns?(post)
+  def owns_post?(post)
     posts.where(id: post.id).exists?
+  end
+
+  def owns_comment?(comment)
+    comments.where(id: comment.id).exists?
   end
 
   def friend?(user)

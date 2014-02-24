@@ -9,7 +9,9 @@ Iwarksns::Application.routes.draw do
     end
   end
 
-  resources :posts, only: [:index, :create, :destroy]
+  resources :posts, only: [:index, :create, :destroy] do
+    resources :comments, only: [:create, :destroy]
+  end
 
   post 'sessions', to: 'sessions#create'
   delete 'sessions', to: 'sessions#destroy'

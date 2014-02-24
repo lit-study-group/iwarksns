@@ -10,10 +10,10 @@ $border-color: #dddddd;
   margin-top: 20px;
   .post-container {
     padding: 20px 0;
-    border-top: 1px $border-color solid;
+    border-top: 2px $border-color solid;
 
     &:last-child {
-      border-bottom: 1px $border-color solid;
+      border-bottom: 2px $border-color solid;
     }
     .post {
       width: 90%;
@@ -24,13 +24,13 @@ $border-color: #dddddd;
         color: #aaaaaa;
       }
 
-      .delete {
-        display: none;
+      .post-action > .delete {
+        visibility: hidden;
       }
     }
     &:hover {
-      .delete {
-        display: block;
+      .post-action > .delete {
+        visibility: visible;
       }
     }
   }
