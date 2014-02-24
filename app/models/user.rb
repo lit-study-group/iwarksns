@@ -24,10 +24,21 @@ class User < ActiveRecord::Base
     posts.where(id: post.id).exists?
   end
 
+  def friend?(user)
+    friends.where(id: user.id).exists?
+  end
+
   def become_friend(friend)
     User.transaction do
       self.friends << friend
       friend.friends << self
+    end
+  end
+
+  def remove_friend(friend)
+    User.transaction do
+      self.friends.delete(friend)
+      friend.friends.delete(self)
     end
   end
 end

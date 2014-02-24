@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only:[:create]
-  before_action :set_user, only: [:show]
+  before_action :set_user, except: [:create]
 
   def show
     @posts = @user.posts
+    @friends = @user.friends
   end
 
   def create
@@ -14,6 +15,16 @@ class UsersController < ApplicationController
     else
       render 'welcome/index'
     end
+  end
+
+  def friend
+    current_user.become_friend(@user) unless current_user.friend?(@user)
+    redirect_to :back
+  end
+
+  def unfriend
+    current_user.remove_friend(@user) if current_user.friend?(@user)
+    redirect_to :back
   end
 
   private

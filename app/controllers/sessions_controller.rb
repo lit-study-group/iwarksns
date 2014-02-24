@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     else
       @user = User.new
       @user.errors.add(:base, 'errors.login')
+      @new_user = User.new
       render 'welcome/index'
     end
   end

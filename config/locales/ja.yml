@@ -14,6 +14,8 @@ ja:
     list: 投稿一覧
   user:
     friends_list: 友達一覧
+    add_friend: 友達追加
+    remove_friend: 友達から外す
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
 
