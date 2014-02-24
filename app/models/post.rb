@@ -16,6 +16,8 @@ class Post < ActiveRecord::Base
 
   default_scope { order(created_at: :desc) }
 
+  has_many :comments
+
   def self.for_user(user)
     Post.limit(20)
   end
