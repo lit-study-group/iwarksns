@@ -6,6 +6,7 @@ ja:
   general:
     title: Iwark SNS
     delete_confirmation: 本当に削除しますか?
+    home: ホーム
   time:
     before: '%{time}前'
   posts:
