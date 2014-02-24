@@ -9,11 +9,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_param)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path, notice: 'Post created'
     else
-      flash[:error] = 'Could not create post'
       render :index
     end
   end
@@ -24,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   private
-  def post_param
+  def post_params
     params.require(:post).permit(:body)
   end
 
