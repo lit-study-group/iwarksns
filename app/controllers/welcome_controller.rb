@@ -3,7 +3,6 @@ class WelcomeController < ApplicationController
   before_action :check_welcome_logined, only:[:index]
 
   def index
-    @user = User.new
     @new_user = User.new
   end
 
