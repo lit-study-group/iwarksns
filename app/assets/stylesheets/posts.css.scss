@@ -1,5 +1,11 @@
 $border-color: #dddddd;
 
+.post-form {
+  textarea {
+    resize: vertical;
+  }
+}
+
 .posts {
   margin-top: 20px;
   .post-container {
@@ -16,6 +22,15 @@ $border-color: #dddddd;
       .date {
         font-size: 9pt;
         color: #aaaaaa;
+      }
+
+      .delete {
+        display: none;
+      }
+    }
+    &:hover {
+      .delete {
+        display: block;
       }
     }
   }

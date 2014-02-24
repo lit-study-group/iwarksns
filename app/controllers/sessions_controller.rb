@@ -3,18 +3,20 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:user][:email])
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to posts_path
+    if @user.try(:authenticate, params[:user][:password])
+      login(@user)
+      redirect_to root_path
     else
+      @user = User.new
       @user.errors.add(:base, 'errors.login')
+      @new_user = User.new
       render 'welcome/index'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to anonymous_root_path
   end
 
 end

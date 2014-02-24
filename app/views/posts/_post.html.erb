@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <% if post.user_id == current_user.id %>
+      <% if user_signed_in? && current_user.owns?(post) %>
         <div class="col-lg-1 col-md-1">
           <div class="delete">
             <%= link_to t('btn.delete'), post, method: 'delete',

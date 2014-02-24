@@ -2,11 +2,20 @@ ja:
   btn:
     delete: 削除
     post: 投稿
+    logout: ログアウト
+  general:
+    title: Iwark SNS
   time:
     before: '%{time}前'
   posts:
     delete_confirmation: 本当に削除しますか?
     feed: タイムライン
+    placeholder: 書き込んでみよう
+    list: 投稿一覧
+  user:
+    friends_list: 友達一覧
+    add_friend: 友達追加
+    remove_friend: 友達から外す
   errors:
     login: メールアドレスもしくはアドレスが正しくありません
 

@@ -1,0 +1,7 @@
+<% if user_signed_in? && user.id != current_user.id %>
+  <% if current_user.friend?(user) %>
+    <%= link_to t('user.remove_friend'), friend_user_path(user), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to t('user.add_friend'), friend_user_path(user), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
