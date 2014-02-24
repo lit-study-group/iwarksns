@@ -2,6 +2,8 @@
 
 Very basic sample SNS for short introduction about Rails.
 
+Tutorial is available [here](https://github.com/lit-study-group/how-to-make-sns).
+
 ## How to run
 
 ```
