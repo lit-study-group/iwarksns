@@ -15,4 +15,22 @@ class User < ActiveRecord::Base
   validates :name, :email, presence: true
 
   has_many :posts
+
+  has_and_belongs_to_many :friends, join_table: 'friendships',
+                                    class_name: 'User',
+                                    association_foreign_key: 'friend_id'
+
+  def become_friend(friend)
+    User.transaction do
+      self.friends << friend
+      friend.friends << self
+    end
+  end
+
+  def remove_friend(friend)
+    User.transaction do
+      self.friends.delete(friend)
+      friend.friends.delete(self)
+    end
+  end
 end
