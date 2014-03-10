@@ -20,6 +20,6 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   def self.for_user(user)
-    Post.limit(20)
+    user.posts
   end
 end

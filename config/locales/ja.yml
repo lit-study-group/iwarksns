@@ -19,6 +19,7 @@ ja:
     remove_friend: 友達から外す
     profile: プロフィール
   errors:
+    need_auth: トークンが正しくありません
     login: メールアドレスもしくはアドレスが正しくありません
   comments:
     saved: コメントは保存されました

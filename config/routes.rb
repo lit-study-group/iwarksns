@@ -18,9 +18,12 @@ Iwarksns::Application.routes.draw do
 
   scope :api, module: 'api' do
     scope :v1, module: 'v1' do
+
       resources :posts, only: [:index, :create, :destroy] do
         resources :comments, only: [:create, :destroy]
       end
+      post 'sessions', to: 'sessions#create'
+
     end
   end
 end

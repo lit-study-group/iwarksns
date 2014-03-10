@@ -33,6 +33,15 @@ class User < ActiveRecord::Base
     friends.where(id: user.id).exists?
   end
 
+  def initialize_token!
+    return unless self.token.nil?
+    self.token = loop do
+      token = SecureRandom.urlsafe_base64(20, false)
+      break token unless User.exists?(token: token)
+    end
+    self.save!
+  end
+
   def become_friend(friend)
     User.transaction do
       self.friends << friend
