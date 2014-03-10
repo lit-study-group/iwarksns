@@ -22,6 +22,7 @@ Iwarksns::Application.routes.draw do
       resources :posts, only: [:index, :create, :destroy] do
         resources :comments, only: [:create, :destroy]
       end
+
       post 'sessions', to: 'sessions#create'
 
     end

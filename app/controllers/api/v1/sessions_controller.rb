@@ -7,7 +7,7 @@ class Api::V1::SessionsController < Api::ApplicationController
       @user.initialize_token!
       render @user
     else
-      render 'api/common/login_error', status: 403
+      render 'api/errors/login', status: 403
     end
   end
 

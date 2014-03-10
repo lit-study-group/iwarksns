@@ -21,6 +21,7 @@ ja:
   errors:
     need_auth: トークンが正しくありません
     login: メールアドレスもしくはアドレスが正しくありません
+    not_authorized: この権限はありません
   comments:
     saved: コメントは保存されました
     not_saved: コメントは保存されませんでした

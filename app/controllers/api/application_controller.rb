@@ -11,7 +11,7 @@ class Api::ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    render 'api/common/auth_error', status: 403 unless user_signed_in?
+    render 'api/errors/authentication', status: 403 unless user_signed_in?
   end
 
   private
