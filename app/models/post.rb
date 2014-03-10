@@ -4,22 +4,13 @@
 #
 #  id         :integer          not null, primary key
 #  body       :text
-#  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
 #
 
 class Post < ActiveRecord::Base
-  belongs_to :author, foreign_key: 'user_id', class_name: 'User'
+  validates :body, presence: true
 
-  delegate :name, to: :author, prefix: true
-
-  default_scope { order(created_at: :desc)
-                 .includes(:author, :comments) }
-
-  has_many :comments
-
-  def self.for_user(user)
-    user.posts
-  end
+  belongs_to :user
 end

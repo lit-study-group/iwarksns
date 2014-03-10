@@ -7,8 +7,7 @@ class WelcomeController < ApplicationController
   end
 
   private
-
-  def check_welcome_logined
-    redirect_to root_path if user_signed_in?
-  end
+    def check_welcome_logined
+      redirect_to root_path if user_signed_in?
+    end
 end

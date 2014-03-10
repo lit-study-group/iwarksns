@@ -1,10 +1,10 @@
 <%= form_for post, html: { class: 'form post-form' } do |f| %>
   <div class="form-group row">
     <div class="col-lg-11">
-      <%= f.text_area :body, class: 'form-control', placeholder: t('posts.placeholder') %>
+      <%= f.text_area :body, class: 'form-control' %>
     </div>
     <div class="col-lg-1">
-      <%= f.submit t('btn.post'), class: 'btn btn-primary' %>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

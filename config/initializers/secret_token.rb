@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Iwarksns::Application.config.secret_key_base = '7474393f38ed7f306fbd274468346254db92643304676d6724c60081a18dcd0242eb621f86c65e15f112265a879d57a7f0b9d62efac162dc9d5e54805e3ca12d'
+IwarksnsBase::Application.config.secret_key_base = 'e84f1fadd7b59180465b9471073e8897d5ecc668911a67f4ec77882d97acc489bfd6975d5a1c4bb2dc2d928c18c4558746ef1ac587e97e83fc1cb1e4c5140d10'

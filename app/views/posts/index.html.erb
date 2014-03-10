@@ -1,7 +1,15 @@
-<h1><%= t 'posts.feed' %></h1>
+<h1>投稿一覧</h1>
+<% if @post.errors.any? %>
+  <h2>エラー</h2>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= render 'posts/form', post: @post %>
 
 <div class="posts">
-  <%= render @posts, comment: @comment %>
+  <%= render @posts %>
 </div>

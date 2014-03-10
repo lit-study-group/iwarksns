@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Iwarksns::Application.load_tasks
+IwarksnsBase::Application.load_tasks
