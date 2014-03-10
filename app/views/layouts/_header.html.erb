@@ -8,6 +8,7 @@
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to t('general.home'), root_path %></li>
+          <li><%= link_to 'ユーザ一覧', users_path %></li>
           <li><%= link_to t('btn.logout'), sessions_path, method: :delete %></li>
         </ul>
       <% else %>

@@ -20,7 +20,12 @@ class User < ActiveRecord::Base
                                     class_name: 'User',
                                     association_foreign_key: 'friend_id'
 
-  def become_friend(friend)
+
+  def friend?(user)
+    self.friends.include?(user)
+  end
+
+  def add_friend(friend)
     User.transaction do
       self.friends << friend
       friend.friends << self
