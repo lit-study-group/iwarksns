@@ -7,11 +7,16 @@ class Api::ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by(token: params[:token]) if params[:token]
+    @current_user ||= User.find_by(token: request_token)
   end
 
   def authenticate_user!
     render 'api/common/auth_error', status: 403 unless user_signed_in?
+  end
+
+  private
+  def request_token
+    request.headers['x-token'] || false
   end
 
 end
