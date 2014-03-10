@@ -11,6 +11,8 @@ gem 'jquery-rails'
 
 gem 'bcrypt-ruby'
 
+gem 'jbuilder'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'jazz_hands'
