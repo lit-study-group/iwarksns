@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
+  before_create :initialize_token!
+
   def owns_post?(post)
     posts.where(id: post.id).exists?
   end
